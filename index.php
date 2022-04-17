@@ -69,7 +69,7 @@ $user_name = 'Александр Краснов'; // укажите здесь �
                                 </div>
                                 <div class="header__profile-name">
                                 <span>
-                                    <!--здесь должно быть имя пользователя-->
+                                    <?php echo $user_name; ?>
                                 </span>
                                     <svg class="header__link-arrow" width="10" height="6">
                                         <use xlink:href="#icon-arrow-right-ad"></use>
@@ -265,7 +265,7 @@ $user_name = 'Александр Краснов'; // укажите здесь �
                                 <img class="post__author-avatar" src="img/" alt="Аватар пользователя">
                             </div>
                             <div class="post__info">
-                                <b class="post__author-name"><!--здесь имя пользоателя--></b>
+                                <b class="post__author-name"><?php echo $user_name; ?></b>
                                 <time class="post__time" datetime="">дата</time>
                             </div>
                         </a>
