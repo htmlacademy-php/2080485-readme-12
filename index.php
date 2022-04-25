@@ -242,12 +242,12 @@ $posts = [
             </div>
         </div>
         <div class="popular__posts">
-            <article class="popular__post post">
             <?php foreach($posts as $post): ?>
-                <header class="post__header">
-                    <h2><?= $post['header']; ?></h2>
-                </header>
-                <div class="post__main">
+                <article class="popular__post post">
+                    <header class="post__header">
+                        <h2><?= $post['header']; ?></h2>
+                    </header>
+                    <div class="post__main">
                     <?php if($post['type'] == 'post-quote') : ?>
                     <!--содержимое для поста-цитаты-->
                     <blockquote>
@@ -297,44 +297,44 @@ $posts = [
                     <?php elseif ($post['type'] == 'post-text'): ?>
                     <!--содержимое для поста-текста-->
                     <p><?= $post['content']; ?></p>
-                    <?php endif; ?>
-                </div>
-                <footer class="post__footer">
-                    <div class="post__author">
-                        <a class="post__author-link" href="#" title="Автор">
-                            <div class="post__avatar-wrapper">
-                                <img alt="Аватар пользователя" class="post__author-avatar" <?php echo 'src="img/'.$post['avatar'].'"';  ?>>
-                            </div>
-                            <div class="post__info">
-                                <b class="post__author-name"><?php echo $post['name']; ?></b>
-                                <time class="post__time" datetime="">дата</time>
-                            </div>
-                        </a>
                     </div>
-                    <div class="post__indicators">
-                        <div class="post__buttons">
-                            <a class="post__indicator post__indicator--likes button" href="#" title="Лайк">
-                                <svg class="post__indicator-icon" width="20" height="17">
-                                    <use xlink:href="#icon-heart"></use>
-                                </svg>
-                                <svg class="post__indicator-icon post__indicator-icon--like-active" width="20" height="17">
-                                    <use xlink:href="#icon-heart-active"></use>
-                                </svg>
-                                <span>0</span>
-                                <span class="visually-hidden">количество лайков</span>
-                            </a>
-                            <a class="post__indicator post__indicator--comments button" href="#" title="Комментарии">
-                                <svg class="post__indicator-icon" width="19" height="17">
-                                    <use xlink:href="#icon-comment"></use>
-                                </svg>
-                                <span>0</span>
-                                <span class="visually-hidden">количество комментариев</span>
+                    <?php endif; ?>
+                    <footer class="post__footer">
+                        <div class="post__author">
+                            <a class="post__author-link" href="#" title="Автор">
+                                <div class="post__avatar-wrapper">
+                                    <img alt="Аватар пользователя" class="post__author-avatar" <?php echo 'src="img/'.$post['avatar'].'"';  ?>>
+                                </div>
+                                <div class="post__info">
+                                    <b class="post__author-name"><?php echo $post['name']; ?></b>
+                                    <time class="post__time" datetime="">дата</time>
+                                </div>
                             </a>
                         </div>
-                    </div>
-                </footer>
+                        <div class="post__indicators">
+                            <div class="post__buttons">
+                                <a class="post__indicator post__indicator--likes button" href="#" title="Лайк">
+                                    <svg class="post__indicator-icon" width="20" height="17">
+                                        <use xlink:href="#icon-heart"></use>
+                                    </svg>
+                                    <svg class="post__indicator-icon post__indicator-icon--like-active" width="20" height="17">
+                                        <use xlink:href="#icon-heart-active"></use>
+                                    </svg>
+                                    <span>0</span>
+                                    <span class="visually-hidden">количество лайков</span>
+                                </a>
+                                <a class="post__indicator post__indicator--comments button" href="#" title="Комментарии">
+                                    <svg class="post__indicator-icon" width="19" height="17">
+                                        <use xlink:href="#icon-comment"></use>
+                                    </svg>
+                                    <span>0</span>
+                                    <span class="visually-hidden">количество комментариев</span>
+                                </a>
+                            </div>
+                        </div>
+                    </footer>
+                </article>
             <?php endforeach; ?>
-            </article>
         </div>
     </div>
 </section>
