@@ -40,7 +40,28 @@ $posts = [
         'name' => 'Владик',
         'avatar' => 'userpic.jpg',
     ]
-]
+];
+
+function crop_text($text, $max_length): string
+{
+    $continue = '<a class="post-text__more-link" href="#">Читать далее</a>';
+    $words = explode(' ', $text);
+    $total = 0;
+    $post_text = '<p>';
+
+    foreach ($words as $word) {
+        $total = $total + strlen($word);
+        $post_text = sprintf('%s %s', $post_text, $word);
+        if ($total >= $max_length) {
+            $post_text = preg_replace('/[.?!]$/', '', $post_text);
+            $post_text = sprintf('%s%s%s%s', $post_text, '...', '</p>', $continue);
+            break;
+        }
+    }
+
+    return $post_text;
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -296,7 +317,7 @@ $posts = [
 
                     <?php elseif ($post['type'] == 'post-text'): ?>
                     <!--содержимое для поста-текста-->
-                    <p><?= $post['content']; ?></p>
+                    <?php echo crop_text($post['content'], 300); ?>
                     </div>
                     <?php endif; ?>
                     <footer class="post__footer">
